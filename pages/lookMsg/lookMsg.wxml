@@ -1,0 +1,383 @@
+<!--pages/lookMsg/lookMsg.wxml-->
+<!-- 个人信息 -->
+<view class='box'>
+  <view class='headTitle'>个人信息</view>
+  <view class='personMsg'>
+    <view class='msgList flex_row'>
+      <view class='title flex_row'>
+        <image class='nameIcon' src='/image/personName.png'></image>
+        <view class='name'>姓名</view>
+      </view>
+      <view class='right_box'>纪姿含</view>
+    </view>
+    <view class='msgList flex_row'>
+      <view class='title flex_row'>
+        <image class='nameIcon' src='/image/personSex.png'></image>
+        <view class='name'>性别</view>
+      </view>
+      <view class='right_box'>女</view>   
+    </view>
+    <view class='msgList flex_row'>
+      <view class='title flex_row'>
+        <image class='nameIcon' src='/image/personPhone.png'></image>
+        <view class='name'>联系电话</view>
+      </view>
+      <view class='right_box'>13320284502</view>  
+    </view>
+    <view class='msgList flex_row'>
+      <view class='title flex_row'>
+        <image class='nameIcon' src='/image/personAddress.png'></image>
+        <view class='name'>居住地址</view>
+      </view>
+      <view class='right_box'>重庆市巴南区鱼洞轻轨站阳光小岛小区1栋28-6</view>  
+    </view>
+    <view class='msgList flex_row'>
+      <view class='title flex_row'>
+        <image class='nameIcon' src='/image/personMarriage.png'></image>
+        <view class='name'>婚姻状况</view>
+      </view>
+      <view class='right_box'>已婚</view>  
+    </view>
+  </view>
+</view>
+<!-- 配偶信息 -->
+<view class='box'>
+  <view class='headTitle'>配偶信息</view>
+  <view class='personMsg'>
+    <view class='msgList flex_row'>
+      <view class='title flex_row'>
+        <image class='nameIcon' src='/image/personName.png'></image>
+        <view class='name'>姓名</view>
+      </view>
+      <view class='right_box'>王成瑞</view>  
+    </view>
+    <view class='msgList flex_row'>
+      <view class='title flex_row'>
+        <image class='nameIcon' src='/image/personSex.png'></image>
+        <view class='name'>性别</view>
+      </view>
+      <view class='right_box'>男</view>  
+    </view>
+    <view class='msgList flex_row'>
+      <view class='title flex_row'>
+        <image class='nameIcon' src='/image/personPhone.png'></image>
+        <view class='name'>联系电话</view>
+      </view>
+      <view class='right_box'>13618237811</view>  
+    </view>
+  </view>
+</view>
+<!-- 职业信息 -->
+<view class='box'>
+  <view class='headTitle'>职业信息</view>
+  <view class='personMsg'>
+    <view class='msgList flex_row'>
+      <view class='title flex_row'>
+        <image class='nameIcon' src='/image/companyName.png'></image>
+        <view class='name'>单位名称</view>
+      </view>
+      <view class='right_box'>重庆车云金服科技股份有限公司</view>
+    </view>
+    <view class='msgList flex_row'>
+      <view class='title flex_row'>
+        <image class='nameIcon' src='/image/companyAddress.png'></image>
+        <view class='name'>单位地址</view>
+      </view>
+      <view class='right_box'>重庆市渝中区解放碑帝都大厦B座11-H</view>
+    </view>
+    <view class='msgList flex_row'>
+      <view class='title flex_row'>
+        <image class='nameIcon' src='/image/companyTime.png'></image>
+        <view class='name'>入职时间</view>
+      </view>
+      <view class='right_box'>1999年5月4日</view>
+    </view>
+    <view class='msgList flex_row'>
+      <view class='title flex_row'>
+        <image class='nameIcon' src='/image/companyJob.png'></image>
+        <view class='name'>职位</view>
+      </view>
+      <view class='right_box'>UI设计</view>
+    </view>
+    <view class='msgList flex_row'>
+      <view class='title flex_row'>
+        <image class='nameIcon' src='/image/companyGet.png'></image>
+        <view class='name'>年收入</view>
+      </view>
+      <view class='right_box flex_row' style='justify-content: space-between;'>
+        <view>1000</view>
+        <view style='padding-right:20px;'>万元</view>
+      </view>
+    </view>
+    <view class='msgList flex_row'>
+      <view class='title flex_row'>
+        <image class='nameIcon' src='/image/personSex.png'></image>
+        <view class='name'>工作类型</view>
+      </view>
+      <view class='right_box'>自雇人士</view>
+    </view>
+  </view>
+</view>
+<!-- 公司规模 -->
+<view class='box'>
+  <view class='headTitle'>公司规模</view>
+  <view class='personMsg'>
+    <view class='msgList flex_row'>
+      <view class='title flex_row'>
+        <image class='nameIcon' src='/image/companyName.png'></image>
+        <view class='name'>公司规模</view>
+      </view>
+      <view class='right_box'>25人以内</view>
+    </view>
+    <view class='msgList flex_row'>
+      <view class='title flex_row'>
+        <image class='nameIcon' src='/image/companyMony.png'></image>
+        <view class='name'>注册资金</view>
+      </view>
+      <view class='right_box flex_row' style='justify-content: space-between;'>
+        <view>200</view>
+        <view style='padding-right:20px;'>万元</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 贷款信息 -->
+  <view class='box'>
+    <view class='headTitle'>贷款信息</view>
+    <view class='personMsg'>
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+          <image class='nameIcon' src='/image/loanHouse.png'></image>
+          <view class='name'>有无房贷</view>
+        </view>
+        <view class='right_box select flex_row'>
+          <view>有</view>
+        </view>
+      </view>
+      <view class='detail'>
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <view class='name'>银行</view>
+          </view>
+          <view class='right_box'>
+            <view>中国农业银行</view>
+          </view>
+        </view>
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <view class='name'>贷款</view>
+          </view>
+          <view class='right_box flex_row' style='justify-content: space-between;'>
+            <view>30</view>
+            <view style='padding-right:20px;'>万元</view>
+          </view>
+        </view>
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <view class='name'>月供</view>
+          </view>
+          <view class='right_box flex_row' style='justify-content: space-between;'>
+            <view>20</view>
+            <view style='padding-right:20px;'>万元</view>
+          </view>
+        </view>
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <view class='name'>期限</view>
+          </view>
+          <view class='right_box flex_row' style='justify-content: space-between;'>
+            <view>12</view>
+            <view style='padding-right:34px;'>期</view>
+          </view>
+        </view>
+      </view>
+
+
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+          <image class='nameIcon' src='/image/loanCar.png'></image>
+          <view class='name'>有无车贷</view>
+        </view>
+        <view class='right_box select'>
+          <view>有</view>
+        </view>
+      </view>
+
+      <view class='detail'>
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <view class='name'>银行</view>
+          </view>
+          <view class='right_box'>
+            <view>中国农业银行</view>
+          </view>
+        </view>
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <view class='name'>贷款</view>
+          </view>
+          <view class='right_box flex_row' style='justify-content: space-between;'>
+            <view>50</view>
+            <view style='padding-right:20px;'>万元</view>
+          </view>
+        </view>
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <view class='name'>月供</view>
+          </view>
+          <view class='right_box flex_row' style='justify-content: space-between;'>
+            <view>0.2</view>
+            <view style='padding-right:20px;'>万元</view>
+          </view>
+        </view>
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <view class='name'>期限</view>
+          </view>
+          <view class='right_box flex_row' style='justify-content: space-between;'>
+            <view>6</view>
+            <view style='padding-right:34px;'>期</view>
+          </view>
+        </view>
+      </view>
+
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+          <image class='nameIcon' src='/image/loanCar.png'></image>
+          <view class='name'>有无信用卡</view>
+        </view>
+        <view class='right_box select'>
+          <view>有</view>
+        </view>
+      </view>
+
+      <view class='detail'>
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <view class='name'>银行</view>
+          </view>
+          <view class='right_box'>
+            <view>中国工商银行</view>
+          </view>
+        </view>
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <view class='name'>贷款</view>
+          </view>
+          <view class='right_box flex_row' style='justify-content: space-between;'>
+            <view>10</view>
+            <view style='padding-right:20px;'>万元</view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <!-- 其他信息 -->
+  <view class='box'>
+    <view class='headTitle'>其他信息</view>
+    <view class='personMsg'>
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+          <image class='nameIcon' src='/image/kidNum.png'></image>
+          <view class='name'>小孩个数</view>
+        </view>
+        <view class='right_box flex_row' style='justify-content: space-between;'>
+          <view>2</view>
+          <view style='padding-right:20px;'>个</view>
+        </view>
+      </view>
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+          <image class='nameIcon' src='/image/driving.png'></image>
+          <view class='name'>有无驾照</view>
+        </view>
+        <view class='right_box'>有</view>
+      </view>
+      <!-- 第一联系人 -->
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+          <image class='nameIcon' src='/image/loanCar.png'></image>
+          <view class='name'>第一联系人</view>
+        </view>
+      </view>
+
+      <view class='detail'>
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <view class='name'>姓名</view>
+          </view>
+          <view class='right_box'>蕊希</view>
+        </view>
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <view class='name'>关系</view>
+          </view>
+          <view class='right_box'>朋友</view>
+        </view>
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <view class='name'>电话</view>
+          </view>
+          <view class='right_box'>13320254157</view>
+        </view>
+      </view>
+      <!-- 第二联系人 -->
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+          <image class='nameIcon' src='/image/loanCar.png'></image>
+          <view class='name'>第二联系人</view>
+        </view>
+      </view>
+
+      <view class='detail'>
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <view class='name'>姓名</view>
+          </view>
+          <view class='right_box'>汪澄蕊</view>
+        </view>
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <view class='name'>关系</view>
+          </view>
+          <view class='right_box'>同事</view>
+        </view>
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <view class='name'>电话</view>
+          </view>
+          <view class='right_box'>18847414521</view>
+        </view>
+      </view>
+      <!-- 第三联系人 -->
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+          <image class='nameIcon' src='/image/loanCar.png'></image>
+          <view class='name'>第三联系人</view>
+        </view>
+      </view>
+
+      <view class='detail'>
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <view class='name'>姓名</view>
+          </view>
+          <view class='right_box'>谭思佳</view>
+        </view>
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <view class='name'>关系</view>
+          </view>
+          <view class='right_box'>同学</view>
+        </view>
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <view class='name'>电话</view>
+          </view>
+          <view class='right_box'>15545147812</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <button class='submit'>提交资料</button> -->

@@ -1,0 +1,45 @@
+<!--pages/bespoke/bespoke.wxml-->
+<view class='tab flex_row'>
+  <view wx:for="{{tabList}}" wx:key="tab" data-id="{{item}}" class="{{tabnum===item?'active':''}}" bindtap='tabChange'>{{item}}</view>
+</view>
+<view class='car bespoke'>
+  <navigator url="/pages/bespokeDetail/bespokeDetail?orderId={{item.orderId}}" wx:for="{{bespokeList}}" wx:key="goods" class='list flex_row'>
+    <image mode='widthFix' src='{{item.goodsMainPic}}'></image>
+    <view class='msg'>
+       <view class='title'><text>{{item.goodsFullName}}</text></view>
+       <view class='price flex_row'><text>首付{{item.downPayment }}万元</text><text>月供{{item.monthlyPayment}}元</text></view>
+       <view class='bespokeType'>
+          <text wx:if="{{item.orderStatus==10 ||item.orderStatus==15}}">预约成功</text>
+          <text wx:if="{{item.orderStatus==20}}">融资审核中</text>
+          <text wx:if="{{item.orderStatus==25}}">融资审核通过</text>
+          <text wx:if="{{item.orderStatus==60}}">融资审核未通过</text>
+       </view>
+    </view>
+  </navigator>
+  <navigator wx:if="{{tabnum=='融资申请'}}" url="/pages/bespokeDetail/bespokeDetail?orderId={{item.orderId}}" wx:for="{{norz}}" wx:key="goods" class='list flex_row'>
+    <image mode='widthFix' src='{{item.goodsMainPic}}'></image>
+    <view class='msg'>
+       <view class='title'><text>{{item.goodsFullName}}</text></view>
+       <view class='price flex_row'><text>首付{{item.downPayment }}万元</text><text>月供{{item.monthlyPayment}}元</text></view>
+       <view class='bespokeType'>
+          <text wx:if="{{item.orderStatus==10 ||item.orderStatus==15}}">预约成功</text>
+          <text wx:if="{{item.orderStatus==20}}">融资审核中</text>
+          <text wx:if="{{item.orderStatus==25}}">融资审核通过</text>
+          <text wx:if="{{item.orderStatus==60}}">融资审核未通过</text>
+       </view>
+    </view>
+  </navigator>
+  <navigator wx:if="{{tabnum=='融资申请'}}" url="/pages/bespokeDetail/bespokeDetail?orderId={{item.orderId}}" wx:for="{{cgrz}}" wx:key="goods" class='list flex_row'>
+    <image mode='widthFix' src='{{item.goodsMainPic}}'></image>
+    <view class='msg'>
+       <view class='title'><text>{{item.goodsFullName}}</text></view>
+       <view class='price flex_row'><text>首付{{item.downPayment }}万元</text><text>月供{{item.monthlyPayment}}元</text></view>
+       <view class='bespokeType'>
+          <text wx:if="{{item.orderStatus==10 ||item.orderStatus==15}}">预约成功</text>
+          <text wx:if="{{item.orderStatus==20}}">融资审核中</text>
+          <text wx:if="{{item.orderStatus==25}}">融资审核通过</text>
+          <text wx:if="{{item.orderStatus==60}}">融资审核未通过</text>
+       </view>
+    </view>
+  </navigator>
+</view>

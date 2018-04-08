@@ -1,0 +1,10 @@
+<!--pages/configure/configure.wxml-->
+<view class='wrapper' wx:for="{{config}}" wx:key="config" wx:for-item="config">
+  <view class='title'>{{config.groupName}}</view>
+  <view class='detail'>
+    <view class='list flex_row' wx:for="{{config.configList}}" wx:key="list">
+      <text class='name'>{{item.name}}</text>
+      <text>{{item.value}}</text>
+    </view>
+  </view>
+</view>

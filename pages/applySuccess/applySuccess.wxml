@@ -1,0 +1,7 @@
+<!--pages/applySuccess/applySuccess.wxml-->
+<view wx:if="{{pageShow}}" class='wrapper'>
+  <image mode='widthFix' src='/image/applySuccess.png'></image>
+  <view>申请成功</view>
+  <view>请等待申请结果</view>
+  <view bindtap='lookBespoke'>查看申请</view>
+</view>

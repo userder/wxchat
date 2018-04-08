@@ -1,0 +1,14 @@
+<!--pages/login/login.wxml-->
+<view wx:if="{{err}}" class="{{err?'notice slideDown':'notice'}}"><text>{{errTxt}}</text></view>
+<view class='wrapper'>
+  <view class='loginCont'>
+    <view class='int phone'>
+      <input bindinput='bindblurPhone' type='number' maxlength='16' placeholder='请输入您的手机号' placeholder-class='pla_style' value='{{phonevalue}}'></input>
+    </view>
+    <view class='int password'>
+      <input bindinput='bindblurPass' maxlength='12' placeholder='请输入您密码' placeholder-class='pla_style' value='{{passvalue}}'></input>
+    </view>
+    <button loading='{{loading}}' bindtap='login' class="{{loading?'login load':'login'}}"><text wx:if="{{!loading}}">登录</text></button>
+  </view>
+  <view class='register' bindtap='registerPage'>没有车护宝账户？点此注册</view>
+</view>

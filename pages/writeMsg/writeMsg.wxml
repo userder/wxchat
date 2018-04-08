@@ -1,0 +1,498 @@
+<!--pages/writeMsg/writeMsg.wxml-->
+<view wx:if="{{err}}" class="{{err?'notice slideDown':'notice'}}"><text>{{errTxt}}</text></view>
+<view class="{{pageone?'pageOne':'pageOne hide'}}">
+  <!-- 个人信息 -->
+  <view class='box'>
+    <view class='headTitle'>个人信息</view>
+    <view class='personMsg'>
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+          <image class='nameIcon' src='/image/personName.png'></image>
+          <view class='name'>姓名</view>
+        </view>
+        <view class='right_box'>
+          <input bindblur='bindname' maxlength='8' type='text' placeholder='请输入姓名' placeholder-class='pla_style' value='{{ownnameValue}}'></input>
+        </view>
+      </view>
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+          <image class='nameIcon' src='/image/personSex.png'></image>
+          <view class='name'>性别</view>
+        </view>
+        <view bindtap='sex' class='right_box select flex_row'>
+          <view>{{sexTxt}}</view>
+          <image wx:if="{{sexDropdown}}" mode='widthFix' src="/image/top.png"></image>
+          <image wx:else mode='widthFix' src="/image/bottom.png"></image>
+        </view>
+      </view>
+      <view wx:if="{{sexDropdown}}" class='selectTxt sex'>
+        <view bindtap='sexList' data-id="{{sexlistTxt}}">{{sexlistTxt}}</view>
+      </view>
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+          <image class='nameIcon' src='/image/personPhone.png'></image>
+          <view class='name'>联系电话</view>
+        </view>
+        <view class='right_box'>
+          <input bindblur='bindphone' maxlength='30' type='number' placeholder='请输入联系电话' placeholder-class='pla_style' value='{{ownphoneValue}}'></input>
+        </view>
+      </view>
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+          <image class='nameIcon' src='/image/personAddress.png'></image>
+          <view class='name'>居住地址</view>
+        </view>
+        <view class='right_box'>
+          <input bindblur='bindaddress' maxlength='50' type='text' placeholder='请输入您的地址' placeholder-class='pla_style' value='{{ownaddressValue}}'></input>
+        </view>
+      </view>
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+          <image class='nameIcon' src='/image/personMarriage.png'></image>
+          <view class='name'>婚姻状况</view>
+        </view>
+        <view bindtap='marry' class='right_box select flex_row'>
+          <view>{{marryTxt}}</view>
+          <image wx:if="{{marryDropdown}}" mode='widthFix' src='/image/top.png'></image>
+          <image wx:else mode='widthFix' src='/image/bottom.png'></image>
+        </view>
+      </view>
+      <view wx:if="{{marryDropdown}}" class='selectTxt sex'>
+        <view wx:for="{{marryList}}" wx:for-idnex="index" wx:key="marry" bindtap='marryList' id='{{index}}' data-id="{{item}}">{{item}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 配偶信息 -->
+  <view wx:if="{{marryTxt=='已婚'}}" class='box'>
+    <view class='headTitle'>配偶信息</view>
+    <view class='personMsg'>
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+          <image class='nameIcon' src='/image/personName.png'></image>
+          <view class='name'>姓名</view>
+        </view>
+        <view class='right_box'>
+          <input bindblur='bindspouseName' cursor-spacing='100' maxlength='8' type='text' placeholder='请输入姓名' placeholder-class='pla_style' value='{{marryName}}'></input>
+        </view>
+      </view>
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+           <image class='nameIcon' src='/image/personSex.png'></image> 
+          <view class='name'>性别</view>
+        </view>
+        <view class='right_box select flex_row'>
+          <view wx:if="{{sexTxt=='男'}}">女</view>
+          <view wx:else>男</view>
+          <!-- <image mode='widthFix' src='/image/top.png'></image> -->
+        </view>
+      </view>
+      <!-- <view class='selectTxt sex'>
+        <view>女</view>
+      </view> -->
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+          <image class='nameIcon' src='/image/personPhone.png'></image>
+          <view class='name'>联系电话</view>
+        </view>
+        <view class='right_box'>
+          <input bindblur='bindspousePhone' cursor-spacing='100' maxlength='15' type='number' placeholder='请输入联系电话' placeholder-class='pla_style' value='{{marryPhone}}'></input>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 职业信息 -->
+  <view class='box'>
+    <view class='headTitle'>职业信息</view>
+    <view class='personMsg'>
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+          <image class='nameIcon' src='/image/companyName.png'></image>
+          <view class='name'>单位名称</view>
+        </view>
+        <view class='right_box'>
+          <input bindblur='bindjobName' cursor-spacing='100' maxlength='30' type='text' placeholder='请输入单位名称' placeholder-class='pla_style' value='{{jobnameValue}}'></input>
+        </view>
+      </view>
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+          <image class='nameIcon' src='/image/companyAddress.png'></image>
+          <view class='name'>单位地址</view>
+        </view>
+        <view class='right_box'>
+          <input bindblur='bindjobAddress' cursor-spacing='100' maxlength='30' type='text' placeholder='请输入单位地址' placeholder-class='pla_style' value='{{jobaddressValue}}'></input>
+        </view>
+      </view>
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+          <image class='nameIcon' src='/image/companyTime.png'></image>
+          <view class='name'>入职时间</view>
+        </view>
+        <picker mode="date" bindchange='dateSelect' class='right_box flex_row bank'>
+          <text wx:if="{{date==''}}">{{jobTime}}</text><text wx:else>{{date}}</text><image mode='widthFix' src='/image/right_icon.png'></image>
+        </picker>
+      </view>
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+          <image class='nameIcon' src='/image/companyJob.png'></image>
+          <view class='name'>职位</view>
+        </view>
+        <view class='right_box'>
+          <input bindblur='bindjob' cursor-spacing='100' maxlength='30' type='text' placeholder='您目前担任的职位' placeholder-class='pla_style' value='{{jobValue}}'></input>
+        </view>
+      </view>
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+          <image class='nameIcon' src='/image/companyGet.png'></image>
+          <view class='name'>年收入</view>
+        </view>
+        <view class='right_box flex_row' style='justify-content: space-between;'>
+          <input bindblur='bindjobIncome' cursor-spacing='100' style='width:8em;' maxlength='8' type='digit' placeholder='您目前的年收入' placeholder-class='pla_style' value='{{jobincomeValue}}'></input>
+          <view style='padding-right:14px;'>万元</view>
+        </view>
+      </view>
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+          <image class='nameIcon' src='/image/personSex.png'></image>
+          <view class='name'>工作类型</view>
+        </view>
+        <view bindtap='jobType' class='right_box select flex_row'>
+          <view>{{jobTypeTxt}}</view>
+          <image wx:if="{{jobTypeDropdown}}" mode='widthFix' src='/image/top.png'></image>
+          <image wx:else mode='widthFix' src='/image/bottom.png'></image>
+        </view>
+      </view>
+      <view wx:if="{{jobTypeDropdown}}" class='selectTxt sex'>
+        <view bindtap='jobTypeList' data-id='{{jobTypeList}}'>{{jobTypeList}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 公司规模 -->
+  <view wx:if="{{jobTypeTxt=='自雇人士'}}" class='box'>
+    <view class='headTitle'>公司规模</view>
+    <view class='personMsg'>
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+          <image class='nameIcon' src='/image/companyName.png'></image>
+          <view class='name'>公司规模</view>
+        </view>
+        <view bindtap='company' class='right_box select flex_row'>
+          <view>{{companyTxt}}</view>
+          <image wx:if="{{companyDropdown}}" mode='widthFix' src='/image/top.png'></image>
+          <image wx:else mode='widthFix' src='/image/bottom.png'></image>
+        </view>
+      </view>
+      <view wx:if="{{companyDropdown}}" class='selectTxt sex'>
+        <view bindtap='companyList' wx:for="{{companyList}}" wx:key="companyList" wx:for-index='index' data-id='{{item}}' id="{{index}}">{{item}}</view>
+      </view>
+      <view class='msgList flex_row'>
+        <view class='title flex_row'>
+          <image class='nameIcon' src='/image/companyMony.png'></image>
+          <view class='name'>注册资金</view>
+        </view>
+        <view class='right_box flex_row' style='justify-content: space-between;'>
+          <input bindblur='bindmony' cursor-spacing='100' style='width:8em;' maxlength='8' type='digit' placeholder='请填写注册资金' placeholder-class='pla_style' value='{{companyMony}}'></input>
+          <view style='padding-right:14px;'>万元</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <button bindtap='next' class='next'>下一步</button>
+</view>
+<view class="{{pageone?'pageTwo':'pageTwo show'}}">
+  <!-- 贷款信息 -->
+    <view class='box'>
+      <view class='headTitle'>贷款信息</view>
+      <view class='personMsg'>
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <image class='nameIcon' src='/image/loanHouse.png'></image>
+            <view class='name'>有无房贷</view>
+          </view>
+          <view bindtap='house' class='right_box select flex_row'>
+            <view>{{houseTxt}}</view>
+            <image wx:if="{{houseDropdown}}" mode='widthFix' src='/image/top.png'></image>
+            <image wx:else mode='widthFix' src='/image/bottom.png'></image>
+          </view>
+        </view>
+        <view wx:if="{{houseDropdown}}" class='selectTxt sex'>
+          <view bindtap='houseList' data-id='{{houseList}}'>{{houseList}}</view>
+        </view>
+        <!-- 有无房贷详情 -->
+        <view wx:if="{{houseTxt=='有'}}" class='detail'>
+          <view class='msgList flex_row'>
+            <view class='title flex_row'>
+              <view class='name'>银行</view>
+            </view>
+            <picker bindchange="houseBank" class='right_box flex_row rightIcon' range="{{array}}">
+              <view><text wx:if="{{houseBankindex==-1}}">{{housebankValue}}</text><text wx:else>{{array[houseBankindex]}}</text><image mode='widthFix' src='/image/right_icon.png'></image></view>
+            </picker>
+          </view>
+          <view class='msgList flex_row'>
+            <view class='title flex_row'>
+              <view class='name'>贷款</view>
+            </view>
+            <view class='right_box flex_row' style='justify-content: space-between;'>
+              <input bindblur='bindhouseAll' cursor-spacing='100' style='width:8em;' maxlength='8' type='digit' value='{{housemonyValue}}'></input>
+              <view style='padding-right:20px;'>万元</view>
+            </view>
+          </view>
+          <view class='msgList flex_row'>
+            <view class='title flex_row'>
+              <view class='name'>月供</view>
+            </view>
+            <view class='right_box flex_row' style='justify-content: space-between;'>
+              <input bindblur='bindhouseMouth' cursor-spacing='100' style='width:8em;' maxlength='8' type='digit' value='{{housemouthValue}}'></input>
+              <view style='padding-right:20px;'>万元</view>
+            </view>
+          </view>
+          <view class='msgList flex_row'>
+            <view class='title flex_row'>
+              <view class='name'>期限</view>
+            </view>
+            <view class='right_box flex_row' style='justify-content: space-between;'>
+              <input bindblur='bindhouseTime' cursor-spacing='100' style='width:8em;' maxlength='8' type='number' value='{{housetimeValue}}'></input>
+              <view style='padding-right:34px;'>期</view>
+            </view>
+          </view>
+        </view>
+
+        <!-- 有无车贷 -->
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <image class='nameIcon' src='/image/loanCar.png'></image>
+            <view class='name'>有无车贷</view>
+          </view>
+          <view bindtap='car' class='right_box select flex_row'>
+            <view>{{carTxt}}</view>
+            <image wx:if="{{carDropdown}}" mode='widthFix' src='/image/top.png'></image>
+            <image wx:else mode='widthFix' src='/image/bottom.png'></image>
+          </view>
+        </view>
+        <view wx:if="{{carDropdown}}" class='selectTxt sex'>
+          <view bindtap='carList' data-id='{{carList}}'>{{carList}}</view>
+        </view>
+        <!-- 有无车贷详情 -->
+        <view wx:if="{{carTxt=='有'}}" class='detail'>
+          <view class='msgList flex_row'>
+            <view class='title flex_row'>
+              <view class='name'>银行</view>
+            </view>
+            <picker bindchange="carBank" class='right_box flex_row rightIcon' range="{{array}}">
+              <view><text wx:if="{{carBankindex==-1}}">{{carbankValue}}</text><text wx:else>{{array[carBankindex]}}</text><image mode='widthFix' src='/image/right_icon.png'></image></view>
+            </picker>
+          </view>
+          <view class='msgList flex_row'>
+            <view class='title flex_row'>
+              <view class='name'>贷款</view>
+            </view>
+            <view class='right_box flex_row' style='justify-content: space-between;'>
+              <input bindblur='bindcarAll' cursor-spacing='100' style='width:8em;' maxlength='8' type='digit' value='{{carmonyValue}}'></input>
+              <view style='padding-right:20px;'>万元</view>
+            </view>
+          </view>
+          <view class='msgList flex_row'>
+            <view class='title flex_row'>
+              <view class='name'>月供</view>
+            </view>
+            <view class='right_box flex_row' style='justify-content: space-between;'>
+              <input bindblur='bindcarMouth' cursor-spacing='100' style='width:8em;' maxlength='8' type='digit' value='{{carmouthValue}}'></input>
+              <view style='padding-right:20px;'>万元</view>
+            </view>
+          </view>
+          <view class='msgList flex_row'>
+            <view class='title flex_row'>
+              <view class='name'>期限</view>
+            </view>
+            <view class='right_box flex_row' style='justify-content: space-between;'>
+              <input bindblur='bindcarTime' cursor-spacing='100' style='width:8em;' maxlength='8' type='number' value='{{cartimeValue}}'></input>
+              <view style='padding-right:34px;'>期</view>
+            </view>
+          </view>
+        </view>
+        <!-- 有无信用卡 -->
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <image class='nameIcon' src='/image/loanCar.png'></image>
+            <view class='name'>有无信用卡</view>
+          </view>
+          <view bindtap='card' class='right_box select flex_row'>
+            <view>{{cardTxt}}</view>
+            <image wx:if="{{cardDropdown}}" mode='widthFix' src='/image/top.png'></image>
+            <image wx:else mode='widthFix' src='/image/bottom.png'></image>
+          </view>
+        </view>
+        <view wx:if="{{cardDropdown}}" class='selectTxt sex'>
+          <view bindtap='cardList' data-id='{{cardList}}'>{{cardList}}</view>
+        </view>
+        <!-- 有无信用卡详情 -->
+        <view wx:if="{{cardTxt=='有'}}" class='detail'>
+          <view class='msgList flex_row'>
+            <view class='title flex_row'>
+              <view class='name'>银行</view>
+            </view>
+            <picker bindchange="cardBank" class='right_box flex_row rightIcon' range="{{array}}">
+              <view><text wx:if="{{cardBankindex==-1}}">{{cardbankValue}}</text><text wx:else>{{array[cardBankindex]}}</text><image mode='widthFix' src='/image/right_icon.png'></image></view>
+            </picker>
+          </view>
+          <view class='msgList flex_row'>
+            <view class='title flex_row'>
+              <view class='name'>贷款</view>
+            </view>
+            <view class='right_box flex_row' style='justify-content: space-between;'>
+              <input bindblur='bindcardAll' cursor-spacing='100' style='width:8em;' maxlength='8' type='digit' value='{{cardmonyValue}}'></input>
+              <view style='padding-right:20px;'>万元</view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+    <!-- 其他信息 -->
+    <view class='box'>
+      <view class='headTitle'>其他信息</view>
+      <view class='personMsg'>
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <image class='nameIcon' src='/image/kidNum.png'></image>
+            <view class='name'>小孩个数</view>
+          </view>
+          <view class='right_box flex_row' style='justify-content: space-between;'>
+            <input bindblur='bindkids' cursor-spacing='100' style='width:8em;' maxlength='8' type='number' placeholder='请填写小孩个数' placeholder-class='pla_style' value='{{kidsnumValue}}'></input>
+            <view style='padding-right:20px;'>个</view>
+          </view>
+        </view>
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <image class='nameIcon' src='/image/driving.png'></image>
+            <view class='name'>有无驾照</view>
+          </view>
+          <view bindtap='driver' class='right_box select flex_row'>
+            <view>{{driverTxt}}</view>
+            <image wx:if="{{driverDropdown}}" mode='widthFix' src='/image/top.png'></image>
+            <image wx:else mode='widthFix' src='/image/bottom.png'></image>
+          </view>
+        </view>
+        <view wx:if="{{driverDropdown}}" class='selectTxt sex'>
+          <view bindtap='driverList' data-id='{{driverList}}'>{{driverList}}</view>
+        </view>
+        <!-- 第一联系人 -->
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <image class='nameIcon' src='/image/loanCar.png'></image>
+            <view class='name'>第一联系人</view>
+          </view>
+          <view bindtap='onelinkman' class='right_box select flex_row'>
+            <view><text>{{onelinkmanTxt}}</text></view>
+            <image wx:if="{{oneDropdown}}" mode='widthFix' src='/image/top.png'></image>
+            <image wx:else mode='widthFix' src='/image/bottom.png'></image>
+          </view>
+        </view>
+        <!-- 第一联系人详情 -->
+        <view wx:if="{{oneDropdown}}" class='detail'>
+          <view class='msgList flex_row'>
+            <view class='title flex_row'>
+              <view class='name'>姓名</view>
+            </view>
+            <view class='right_box'>
+              <input bindblur='bindonelinkmanName' cursor-spacing='100' maxlength='30' type='text' placeholder='请输入联系人姓名' placeholder-class='pla_style' value='{{onenameValue}}'></input>
+            </view>
+          </view>
+          <view class='msgList flex_row'>
+            <view class='title flex_row'>
+              <view class='name'>关系</view>
+            </view>
+            <view class='right_box'>
+              <input bindblur='bindonelinkmanRelation' cursor-spacing='100' maxlength='30' type='text' placeholder='您与TA之间的关系' placeholder-class='pla_style' value='{{onerelationValue}}'></input>
+            </view>
+          </view>
+          <view class='msgList flex_row'>
+            <view class='title flex_row'>
+              <view class='name'>电话</view>
+            </view>
+            <view class='right_box'>
+              <input bindblur='bindonelinkmanPhone' cursor-spacing='100' maxlength='30' type='number' placeholder='联系人电话' placeholder-class='pla_style' value='{{onephoneValue}}'></input>
+            </view>
+          </view>
+        </view>
+        <!-- 第二联系人 -->
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <image class='nameIcon' src='/image/loanCar.png'></image>
+            <view class='name'>第二联系人</view>
+          </view>
+          <view bindtap='twolinkman' class='right_box select flex_row'>
+            <view><text>{{twolinkmanTxt}}</text></view>
+            <image wx:if="{{twoDropdown}}" mode='widthFix' src='/image/top.png'></image>
+            <image wx:else mode='widthFix' src='/image/bottom.png'></image>
+          </view>
+        </view>
+
+        <view wx:if="{{twoDropdown}}" class='detail'>
+          <view class='msgList flex_row'>
+            <view class='title flex_row'>
+              <view class='name'>姓名</view>
+            </view>
+            <view class='right_box'>
+              <input bindblur='bindtwolinkmanName' cursor-spacing='100' maxlength='30' type='text' placeholder='请输入联系人姓名' placeholder-class='pla_style' value='{{twonameValue}}'></input>
+            </view>
+          </view>
+          <view class='msgList flex_row'>
+            <view class='title flex_row'>
+              <view class='name'>关系</view>
+            </view>
+            <view class='right_box'>
+              <input bindblur='bindtwolinkmanRelation' cursor-spacing='100' maxlength='30' type='text' placeholder='您与TA之间的关系' placeholder-class='pla_style' value='{{tworelationValue}}'></input>
+            </view>
+          </view>
+          <view class='msgList flex_row'>
+            <view class='title flex_row'>
+              <view class='name'>电话</view>
+            </view>
+            <view class='right_box'>
+              <input bindblur='bindtwolinkmanPhone' cursor-spacing='100' maxlength='30' type='number' placeholder='联系人电话' placeholder-class='pla_style' value='{{twophoneValue}}'></input>
+            </view>
+          </view>
+        </view>
+        <!-- 第三联系人 -->
+        <view class='msgList flex_row'>
+          <view class='title flex_row'>
+            <image class='nameIcon' src='/image/loanCar.png'></image>
+            <view class='name'>第三联系人</view>
+          </view>
+          <view bindtap='threelinkman' class='right_box select flex_row'>
+            <view><text>{{threelinkmanTxt}}</text></view>
+            <image wx:if="{{threeDropdown}}" mode='widthFix' src='/image/top.png'></image>
+            <image wx:else mode='widthFix' src='/image/bottom.png'></image>
+          </view>
+        </view>
+
+        <view wx:if="{{threeDropdown}}" class='detail'>
+          <view class='msgList flex_row'>
+            <view class='title flex_row'>
+              <view class='name'>姓名</view>
+            </view>
+            <view class='right_box'>
+              <input bindblur='bindthreelinkmanName' cursor-spacing='100' maxlength='30' type='text' placeholder='请输入联系人姓名' placeholder-class='pla_style' value='{{threenameValue}}'></input>
+            </view>
+          </view>
+          <view class='msgList flex_row'>
+            <view class='title flex_row'>
+              <view class='name'>关系</view>
+            </view>
+            <view class='right_box'>
+              <input bindblur='bindthreelinkmanRelation' cursor-spacing='100' maxlength='30' type='text' placeholder='您与TA之间的关系' placeholder-class='pla_style' value='{{threerelationValue}}'></input>
+            </view>
+          </view>
+          <view class='msgList flex_row'>
+            <view class='title flex_row'>
+              <view class='name'>电话</view>
+            </view>
+            <view class='right_box'>
+              <input bindblur='bindthreelinkmanPhone' cursor-spacing='100' maxlength='30' type='number' placeholder='联系人电话' placeholder-class='pla_style' value='{{threephoneValue}}'></input>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <button bindtap='submitMsg' class='submit'>提交资料</button>
+</view>

@@ -1,0 +1,23 @@
+<!--pages/bespokeSuccess/bespokeSuccess.wxml-->
+<view class='topCont'>
+  <image mode='widthFix' src='/image/applySuccess.png'></image>
+  <view>预约成功</view>
+  <view>稍后会有客服人员联系您看车事宜</view>
+  <view bindtap='bespoke' class='look'>查看申请</view>
+</view>
+<view class='bottomCont'>
+  <view class='title'>更多精品车源</view>
+  <view class='moreCar'>
+    <view class='row flex_row'>
+      <view class='box' wx:for="{{carList}}" wx:key="id">
+        <navigator url='/pages/detailCar/detailCar?carId={{item.goodsId}}'>
+          <image mode='widthFix' src='{{item.goodsMainPic}}'></image>
+          <view class='carName'>{{item.goodsBrandName}}{{item.goodsTypeName}}</view>
+          <view class='detail'>{{item.goodsFullName}}</view>
+          <view class='price'><text>首付{{item.downPayment}}万元</text></view>
+          <view class='price'><text>月供{{item.monthlyPayment}}元</text></view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

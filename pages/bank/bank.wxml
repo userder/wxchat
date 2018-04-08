@@ -1,0 +1,12 @@
+<!--pages/bank/bank.wxml-->
+<view class="section">
+  <view class="section__title">普通选择器</view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      当前选择：{{array[index]}}
+    </view>
+  </picker>
+</view>
+<scroll-view class='wrapper' scroll-y='true' style="height:{{scrollH}}px">
+  <view bindtap='bankSelect' wx:for="{{20}}" wx:key="bank" data-id='中国银行'>中国银行</view>
+</scroll-view>

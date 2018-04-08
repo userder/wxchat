@@ -1,0 +1,245 @@
+/* pages/detailCar/detailCar.wxss */
+page{
+  background: #F9F9F9;
+}
+.sliderCont{
+  width: 100%;
+  position: relative;
+}
+.swiper{
+  width: 100%;
+}
+.swiperTxt,.swiperNum{
+  color: rgba(255,255,255, 0.8);
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  bottom: 16rpx;
+  font-size: 9pt;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+.swiperTxt{
+  left: 10px;
+}
+.swiperNum{
+  right: 10px;
+}
+.swiper image{
+  width: 100%;
+}
+.carMsg{
+  justify-content: space-between;
+}
+.detailtitle{
+  font-size: 13pt;
+  line-height: 24px;
+  font-weight: bold;
+  word-break: break-all;
+  color: #353535;
+  padding: 16px;
+  padding-top: 20px;
+  background: #fff;
+}
+.carMsg{
+  padding: 0 14px;
+  padding-bottom: 16px;
+  font-size: 12pt;
+  background: #fff;
+}
+.carMsg .box text{
+  font-size: 10pt;
+  color: rgba(159,159,159, 0.8);
+}
+.plan{
+  margin: 12rpx 0;
+  background: #fff;
+  font-size: 11pt;
+  padding: 14px;
+  padding-bottom: 30px;
+  color: #353535;
+}
+.plan .title{
+  font-size: 12pt;
+  padding-bottom: 4px;
+  padding-left: 10px;
+  position: relative;
+  color: #353535;
+  font-weight: bold;
+}
+.plan .title::after{
+  content: '';
+  height: 18px;
+  width: 3px;
+  background: #3573FA;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.planName{
+  color: rgba(159,159,159, 1);
+  justify-content: space-between;
+  padding-left: 10px;
+}
+.planName text:last-of-type{
+  color: #3374FA;
+}
+.planDetail{
+  background: #F5F9FC;
+  border-radius: 2px;
+  margin-top: 10px;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 10pt;
+  padding: 14px 0;
+}
+.planDetail .mony{
+  width: 33.333333%;
+}
+.mony view:last-of-type{
+  color: #FF4527;
+  font-size: 12pt;
+  /* font-weight: bold; */
+  padding-top: 10rpx;
+}
+.address{
+  background: #fff;
+  font-size: 11pt;
+  justify-content: space-between;
+  padding: 20px;
+  margin-bottom: 12rpx;
+  color: #353535;
+  width: 100%;
+  box-sizing: border-box;
+}
+.addressTxt view{
+  min-width: 4em;
+}
+.addressTxt view:last-of-type{
+  padding-left: 40px;
+  padding-right: 14px;
+  word-break: break-all;
+  line-height: 20px;
+  color: #8C8C8C;
+}
+.address image{
+  width: 7px;
+  height: 12px;
+}
+.carConfigure{
+  background: #fff;
+  padding-bottom: 100px;
+}
+.carConfigure .title{
+  padding: 14px;
+  padding-left: 24px;
+  font-size: 12pt;
+  font-weight: bold;
+  position: relative;
+  border-bottom: 1px solid #efefef;
+}
+.carConfigure .title::after{
+  content: '';
+  height: 18px;
+  width: 3px;
+  background: #3573FA;
+  position: absolute;
+  top: 14px;
+  left: 14px;
+}
+.carConfigure .list{
+  padding: 0 26px;
+  padding-top: 16px;
+  font-size: 11pt;
+  color: #858585;
+}
+.configureName{
+  color: #757575;
+  width: 10em;
+  margin-right: 12%;
+}
+.lookDetail{
+  color: #3374FA;
+  text-align: center;
+  padding: 30px;
+  font-size: 11pt;
+}
+.lookDetail navigator{
+  display: inline-block;
+}
+.bespoke{
+  background: #3573FA;
+  color: rgba(255,255,255, 0.8);
+  border-radius: 0;
+  font-size: 12pt;
+  line-height: 2.8;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.bespoke::after{
+  border: none;
+}
+.shadow{
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.shadow.hide{
+  display: none;
+  -webkit-animation: hide 0.4s ease-out forwards; 
+}
+@-webkit-keyframes hide{
+  0%{-webkit-transform: translateY(0)}
+  100%{-webkit-transform: translateY(-100%)}
+}
+.shadow.show{
+  display: block;
+  -webkit-animation: show 0.4s ease-out forwards;
+}
+@-webkit-keyframes show{
+  0%{-webkit-transform: translateY(-100%)}
+  100%{-webkit-transform: translateY(0)}
+}
+.inputBox{
+  width: 80%;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 6px;
+  color: #353535;
+  font-size: 11pt;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+.inputBox icon{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.inputTitle{
+  font-size: 12pt;
+  color: #666;
+}
+.inputBox .input{
+  border: 1px solid #F5F5F5;
+  padding: 8px 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+.pla_style{
+  color: #BDBDBD;
+}
+.confirm{
+  background: #0089F1;
+  color: rgba(255,255,255, 0.9);
+  text-align: center;
+  line-height: 40px;
+  border-radius: 4px;
+  margin-top: 10px;
+}

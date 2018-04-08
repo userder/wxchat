@@ -1,0 +1,19 @@
+<!--pages/register/register.wxml-->
+<view wx:if="{{err}}" class="{{err?'notice slideDown':'notice'}}"><text>{{errTxt}}</text></view>
+<view class='wrapper'>
+  <view class='loginCont'>
+    <view class='int phone'>
+      <input bindinput='bindblurPhone' cursor-spacing='100' maxlength='15' type='number' placeholder='请输入您的手机号' placeholder-class='pla_style' value='{{phonevalue}}'></input>
+    </view>
+    <view class='int code flex_row'>
+      <input bindinput='bindblurCode' cursor-spacing='100' maxlength='10' type='number' placeholder='请输入验证码' placeholder-class='pla_style' value='{{codevalue}}'></input>
+      <view bindtap='setcode'><text>{{codeTxt}}</text></view>
+    </view>
+    <view class='int password'>
+      <input bindinput='bindblurPass' cursor-spacing='100' maxlength='12' placeholder='设置6位以上的密码' placeholder-class='pla_style' value='{{passvalue}}'></input>
+    </view>
+    <button bindtap='login' loading='{{loading}}' class="{{loading?'login load':'login'}}"><text wx:if="{{!loading}}">登录</text></button>
+  </view>
+  <view class='register' bindtap='loginPage'>如果已有车护宝账户，点此登录</view>
+</view>
+

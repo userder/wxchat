@@ -1,0 +1,77 @@
+page{
+  background: #F9F9F9;
+  font-family: '微软雅黑';
+}
+.headCont{
+  background: #fff;
+  padding: 36px 0;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.headCont image{
+  width: 190rpx;
+  height: 190rpx;
+  margin-bottom: 24rpx;
+  border-radius: 50%;
+}
+.headCont button{
+  background: #4182FF;
+  box-shadow: 0px 0px 10rpx #87B0FE;
+  border-radius: 4px;
+  color: #fff;
+}
+.headCont button,.headCont view{
+  margin: auto;
+  font-size: 14px;
+  width: 190rpx;
+  line-height: 34px;
+}
+.headCont view{
+  color: #353535;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 13pt;
+  position: relative;
+  top: -6px;
+}
+.nav{
+  background: #fff;
+  margin-top: 30rpx;
+  font-size: 13pt;
+  padding-left: 14px;
+  color: #222;
+}
+.nav .list{
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  padding-right: 14px;
+  position: relative;
+}
+.nav .list::after{
+  content: '';
+  height: 1px;
+  width: 100%;
+  background: #F2F2F2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.nav .list:last-of-type::after{
+  height: 0;
+}
+.navIcon{
+  width: 14px;
+  max-height: 22px;
+  margin-right: 12px;
+}
+.downIcon{
+  width: 17px;
+  max-height: 24px;
+}
+.path{
+  width: 9px;
+  max-height: 17px;
+}

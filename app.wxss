@@ -1,0 +1,92 @@
+/**app.wxss**/
+.notice {
+  width: 100%;
+  font-size: 14px;
+  padding: 16rpx 0;
+  color: #fff;
+  background: #E64340;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+} 
+.notice.slideDown{
+  -webkit-animation: show 2s ease-in forwards;
+}
+@-webkit-keyframes show{
+  0%{-webkit-transform: translateY(-50px);opacity: 0;}
+  30%{-webkit-transform: translateY(0);opacity: 1;}
+  30%{-webkit-transform: translateY(0);opacity: 1;}
+  100%{-webkit-transform: translateY(-50px);opacity: 0;}
+}
+button::after{
+  border: none;
+}
+.flex_row{
+  display: flex;
+  flex-direction: row; 
+  align-items: center
+}
+.flex_col{
+  display: flex;
+  flex-direction: column;
+}
+/* 汽车列表 */
+.car{
+  justify-content: space-between;
+  padding: 14px 12px;
+  padding-top: 0;
+}
+.car .list{
+  width: 100%;
+  /* align-items: flex-start; */
+  position: relative;
+  padding: 14px 0;
+}
+.car .list::after{
+  content: '';
+  height: 1px;
+  width: 100%;
+  background: #efefef;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.car .list:last-of-type::after{
+  height: 0;
+}
+.car .list image{
+  border-radius: 6px;
+  width: 38%;
+  max-height: 100px;
+  margin-right: 12px;
+}
+.car .msg{
+  width: 62%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.car .list .title{
+  color: #353535;
+  word-break: break-all;
+  font-weight: bolder;
+  font-size: 12pt;
+  height: 46px;
+  line-height: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.car .list .price{
+  font-size: 10pt;
+  color: #FFB413;
+  padding-top: 22rpx;
+  /* font-weight: b */
+}
+.car .price text:first-of-type{
+  margin-right: 40rpx;
+}

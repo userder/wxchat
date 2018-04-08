@@ -1,0 +1,24 @@
+<!--pages/byStages/byStages.wxml-->
+<view class='plan'>
+  <view class='planTitle'>您可以自由选择合适您的金融方案</view>
+  <view class='tab flex_row'>
+    <view bindtap='tabChange' class="{{tabText==item?'active':''}}" wx:for="{{tabList}}" wx:for-index="id" wx:key="tab" id="{{id}}" data-id="{{item}}">{{item}}</view>
+  </view>
+
+  <view class="{{tabChange?'plantDetail':''}}">
+    <view class='allPrice'>{{list[index].downPayment}}万元</view>
+      <view class='list' wx:for="{{list[index].periodizationList}}" wx:key="id">
+        <view class='flex_row'>
+          <text>{{item.name}}</text>
+          <text>月供<text class='h_color'>{{item.monthlyPayment}}</text>元</text>
+          <text>{{item.times}}</text>
+        </view>
+        <text class='introduce' space="emsp">方案已包含总费用{{item.totalFee}}元 年利率6.6%</text>
+      </view>
+      <view class='lint'><text>具体可贷金额以车辆实际评估价及审批结果为准。</text></view>
+  </view>
+
+</view>
+<view class='process'>
+  <image mode='widthFix' src='/image/process.png'></image>
+</view>

@@ -1,0 +1,43 @@
+<!--pages/bespokeDetail/bespokeDetail.wxml-->
+<view class='headTitle flex_row'>
+  <image src='/image/{{bespokeTtileIcon}}.png'></image>
+  <view>{{bespokeTitle}}</view>
+</view>
+<view class='car'>
+  <navigator url='/pages/detailCar/detailCar?carId={{cont.goodsId}}' class='list flex_row'>
+    <image mode='widthFix' src='{{cont.goodsMainPic}}'></image>
+    <view class='msg'>
+       <view class='title'><text>{{cont.goodsFullName }}</text></view>
+       <view class='price flex_row'><text>首付{{cont.downPayment }}万元</text><text>月供{{cont.monthlyPayment}}元</text></view>
+    </view>
+  </navigator>
+  <view class='list times'>
+    <view>{{prompt}}</view>
+    <view>{{cont.checkTime}}</view>
+  </view>
+  <view class='link_up'>
+    <view class='flex_row'>
+      <image mode='widthFix' src='/image/phone.png'></image>
+      <view bindtap='call'>联系客服</view>
+    </view>
+  </view>
+</view>
+<view class='more_msg' wx:if="{{cont.orderStatus=='10' || cont.orderStatus=='15'}}">
+  <view class='h_border flex_row'>
+    <view class='title'>看车时间</view>
+    <text wx:if="{{cont.checkTime!=''||cont.checkTime!=undefind}}">{{cont.checkTime}}</text>
+    <text wx:else>待确认</text>
+  </view>
+  <view class='address h_border flex_row'>
+    <view class='flex_row'>
+      <view class='title'>看车地点</view>
+      <text>{{cont.shopName}}</text>
+    </view>
+    <!-- <image mode='widthFix' class='addressIcon' src='/image/right_icon.png'></image> -->
+  </view>
+  <view class='h_border flex_row'>
+    <view class='title'>携带证件</view>
+    <text>身份证，驾照（如需试驾请携带）</text>
+  </view>
+</view>
+<button bindtap='apply' class='apply' wx:if="{{btnType}}">{{btnText}}</button>

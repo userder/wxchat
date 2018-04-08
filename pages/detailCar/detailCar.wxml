@@ -1,0 +1,77 @@
+<!--pages/detailCar/detailCar.wxml-->
+<view wx:if="{{err}}" class="{{err?'notice slideDown':'notice'}}"><text>{{errTxt}}</text></view>
+<view class='wrapper'>
+  <view class='sliderCont'>
+    <swiper bindtap='lookImg' autoplay="true" circular="true" bindchange='bindchange' class='swiper' style="height:{{swiperH}}px;">
+      <block wx:for="{{detailCont.imgList}}" wx:key="img">
+        <swiper-item>
+          <image mode='widthFix' src="{{item.goodsImagePath}}" class="slide-image"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='swiperTxt'>图片仅供参考，具体以到店为准</view>
+    <view class='swiperNum'>{{current}} / {{detailCont.imgList.length}}</view>
+  </view>
+  <view class='detailtitle'>{{baseInfo.goodsFullName}}</view>
+  <view class='carMsg flex_row'>
+    <view class='box'>
+      <view>{{baseInfo.goodsRegTime }}</view>
+      <text>上牌时间</text>
+    </view>
+    <view class='box'>
+      <view>{{Kilometre}}万公里</view>
+      <text>车辆里程</text>
+    </view>
+    <view class='box'>
+      <view>{{baseInfo.goodsCarscountry}}</view>
+      <text>车辆所在地</text>
+    </view>
+  </view>
+  <view class='plan'>
+    <view class='title'>购车方案</view>
+    <view class='planName flex_row'>
+      <text>分期购车（一成首付购车）</text>
+      <text bindtap='moreByStages'>更多分期方案</text>
+    </view>
+    <view class='planDetail flex_row'>
+      <view class='mony'>
+        <view>首付</view>
+        <view>{{baseInfo.downPayment}}万元</view>
+      </view>
+      <view class='mony'>
+        <view>月供</view>
+        <view>{{baseInfo.monthlyPayment}}元</view>
+      </view>
+      <view class='mony'>
+        <view>期数</view>
+        <view>{{baseInfo.frequency }}期</view>
+      </view>
+    </view>
+  </view>
+  <view class='address flex_row'>
+    <view class='addressTxt flex_row'>
+      <view>所在门店</view>
+      <view>{{baseInfo.shopName}}</view>
+    </view>
+    <!-- <view class='path'><image class='right_icon' src="/image/path.png"></image></view> -->
+  </view>
+  <view class='carConfigure'>
+    <view class='title'>车辆配置</view>
+    <view  class='list flex_row' wx:for="{{detailCont.baseConfigList}}" wx:key="baseConfigList">
+      <text class='configureName'>{{item.name}}</text>
+      <text class='configureMsg'>{{item.value}}</text>
+    </view>
+    <view class='lookDetail' bindtap='configDetail'>查看详细配置</view>
+  </view>
+  <button class='bespoke' bindtap='bespoke'>预约看车</button> 
+</view>
+<view class="{{shadowShow?'shadow show':'shadow'}}" catchtouchmove="shadow">
+  <view class='inputBox'>
+  <icon bindtap='offShadow' type='clear' size='20' color='#DEDEDE'></icon>
+    <view class='inputTitle'>请告诉我们您的联系方式</view>
+    <view class='input'><input bindinput='bindblurName' type='text' maxlength='8' placeholder='姓名' placeholder-class='pla_style' value='{{namevalue}}'></input></view>
+    <view class='input'><input bindinput='bindblurPhone' type='number' maxlength='15' placeholder='联系电话' placeholder-class='pla_style' value='{{phonevalue}}'></input></view>
+    <view bindtap='confirm' class='confirm'>确认预约</view>
+  </view>
+</view>
+

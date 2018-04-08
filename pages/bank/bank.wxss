@@ -1,0 +1,13 @@
+/* pages/bank/bank.wxss */
+.wrapper{
+  width: 100%;
+  font-size: 13pt;
+  box-sizing: border-box;
+  padding-left: 16px;
+  border-top: 1px solid rgba(232,232,234, 0.9);
+  color: #717171;
+}
+.wrapper view{
+  padding: 20px 0;
+  border-bottom: 1px solid #efefef;
+}

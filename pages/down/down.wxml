@@ -1,0 +1,5 @@
+<view class="wrapper">
+  <view>车护宝下载链接<text>{{downTxt}}</text></view>
+  <view>请复制下载链接后，在浏览器中打开下载车护宝APP</view>
+  <view bindtap='copy' class='down'>点击复制下载链接</view>
+</view>

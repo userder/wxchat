@@ -1,0 +1,66 @@
+/* pages/bespoke/bespoke.wxss */
+.tab{
+  font-size: 12pt;
+  color: #B2B2B2;
+  justify-content: space-around;
+  border-bottom: 1px solid #D8D7DD;
+  padding-bottom: 10px;
+  padding-top: 4px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: #fff;
+  width: 100%;
+}
+.tab view{
+  padding: 12rpx;
+  width: 33.3333%;
+  text-align: center;
+  transition: all 0.5s;
+}
+.tab view.active{
+  position: relative;
+  color: #3573FA;
+}
+.tab view::after{
+  content: '';
+  height: 2px;
+  width: 0%;
+  background: transparent;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}
+.tab view.active::after{
+  transition: all 0.5s; 
+  content: '';
+  height: 2px;
+  width: 60%;
+  background: #3573FA;
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+}
+.car{
+  padding-top: 47px;
+}
+.car .list .title{
+  line-height: 20px;
+  height: 42px;
+}
+
+.bespokeType{
+  color: #FF6160;
+  font-size: 11pt;
+  padding-top: 2rpx;
+}
+.bespoke .list .price{
+  padding: 8rpx 0;
+}
+.loaddingTxt{
+  padding: 10rpx 0;
+  text-align: center;
+  font-size: 11pt;
+  color: #999;
+}

@@ -1,0 +1,62 @@
+/**index.wxss**/
+page{
+  font-family: '微软雅黑';
+}
+.head{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0; 
+  z-index: 2; 
+  background: #fff;
+  border-bottom: 1px solid #E3E3E7;
+}
+.searchBox{
+  font-size: 11pt;
+  color: #B2B3B9;
+  background: #F7F7F7;
+  text-align: center;
+  margin: 0 12%;
+  margin-top: 4px;
+  margin-bottom: 14px;
+  padding: 8px;
+  border-radius: 30px;
+}
+.searchBox icon{
+  position: relative;
+  top: 2px;
+  margin-right: 4px;
+}
+.label{
+  margin-top: 53px;
+  padding: 30rpx;
+  background: #F9F9F9;
+  display: flex;
+  justify-content: center;
+  color: #666;
+  font-size: 11pt;
+}
+.car.h_top{
+  margin-top: 53px;
+}
+.car{
+  padding-bottom: 0;
+}
+.history{
+  background: #fff;
+  border: 1px solid #F3F3F3;
+  padding: 12rpx 26rpx;
+  border-radius: 4px;
+}
+.history image{
+  width: 10px;
+  height: 10px;
+  margin-left: 26rpx;
+}
+.loaddingTxt{
+  padding: 10rpx 0;
+  text-align: center;
+  font-size: 11pt;
+  color: #999;
+  padding-bottom: 20px;
+}

@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class='head'>
+  <view class='searchBox' bindtap='search'>
+    <icon type='search' size='14'></icon><text>搜索车辆品牌</text>
+  </view>
+</view>
+<view class='label' wx:if="{{search}}">
+  <view bindtap='clearSearch' class='history flex_row'>{{searchTxt}}<image src='/image/clear.png'></image></view>
+</view>
+<view class="{{search?'car':'car h_top'}}">
+  <navigator wx:if="{{search}}" url='/pages/detailCar/detailCar?carId={{item.goodsId}}' class='list flex_row' wx:for="{{searchcarList}}" wx:key="carList">
+    <image mode='widthFix' src='{{item.goodsMainPic}}'></image>
+    <view class='msg'>
+       <view class='title'><text>{{item.goodsFullName }}</text></view>
+       <view class='price flex_row'><text>首付{{item.downPayment}}万元</text><text>月供{{item.monthlyPayment}}元</text></view>
+    </view>
+  </navigator>
+  <navigator wx:if="{{!search}}" url='/pages/detailCar/detailCar?carId={{item.goodsId}}' class='list flex_row' wx:for="{{carList}}" wx:key="carList">
+    <image mode='widthFix' src='{{item.goodsMainPic}}'></image>
+    <view class='msg'>
+       <view class='title'><text>{{item.goodsFullName}}</text></view>
+       <view class='price flex_row'><text>首付{{item.downPayment}}万元</text><text>月供{{item.monthlyPayment}}元</text></view>
+    </view>
+  </navigator>
+</view>
+<view class='loaddingTxt' wx:if="{{loadding}}"><text wx:if="{{loadComplete}}">我是有底线的 ^ v ^</text><text wx:else>正在载入更多...</text></view>

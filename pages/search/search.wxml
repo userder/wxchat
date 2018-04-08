@@ -1,0 +1,11 @@
+<!--pages/search/search.wxml-->
+<view class='head'>
+  <view class='searchBox flex_row'>
+    <icon class='searchIcon' size='14' type='search'></icon>
+    <input bindinput='bindinput' focus='{{focus}}' type='text' placeholder-style='color:#B2B3B9;' placeholder='输入车牌关键字' value='{{searchinput}}'></input>
+    <icon bindtap='clear' size='15' type='clear'></icon>
+  </view>
+</view>
+<view class="{{havelist?'list show':'list'}}">
+  <view bindtap='searchTxt' wx:for="{{searchList}}" wx:for-index="index" wx:key="{{index}}" data-id="{{item}}"><text>{{item.brandName}}</text></view>
+</view>

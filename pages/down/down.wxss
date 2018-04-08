@@ -1,0 +1,27 @@
+page{
+  background: #F9F9F9;
+}
+.wrapper{
+  width: 100%;
+  color: #878787;
+  font-size: 11pt;
+  text-align: center;
+  position: fixed;
+  top: 30%;
+  left: 0;
+}
+.wrapper text{
+  color: #4182FF;
+}
+.wrapper view:nth-of-type(2){
+  margin: 4px 0;
+}
+.down{
+  display: inline-block;
+  padding: 10px 14px;
+  color: #EBEEF9;
+  background: rgba(65,130,255, 0.9); 
+  border-radius: 4px;
+  box-shadow: 0 0 6px #4182FF;
+  margin-top: 20px;
+}

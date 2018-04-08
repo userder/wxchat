@@ -1,0 +1,46 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/down/down",
+    "pages/writeMsg/writeMsg",
+    "pages/bespokeSuccess/bespokeSuccess",
+    "pages/mine/mine",
+    "pages/register/register",
+    "pages/login/login",
+    "pages/bespoke/bespoke",
+    "pages/search/search",
+    "pages/bespokeDetail/bespokeDetail",
+    "pages/detailCar/detailCar",
+    "pages/lookMsg/lookMsg",
+    "pages/applySuccess/applySuccess",
+    "pages/byStages/byStages",
+    "pages/configure/configure",
+    "pages/bank/bank"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "气球计划",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#7F8388",
+    "selectedColor": "#4182FF",
+    "borderStyle": "#dadada",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/tab1.png",
+        "selectedIconPath": "image/tab1On.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "个人中心",
+        "iconPath": "image/tab2.png",
+        "selectedIconPath": "image/tab2On.png"
+      }
+    ]
+  }
+}

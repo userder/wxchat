@@ -1,0 +1,22 @@
+<!--logs.wxml-->
+<view class='headCont flex_col'>
+  <image src="{{userImg}}"></image>
+  <button wx:if="{{!login}}" bindtap='login'>去登录</button>
+  <view wx:else>{{userName}}</view>
+</view>
+<view class='nav'>
+  <view bindtap='mybespoke' class='list flex_row'>
+    <view class='flex_row'>
+      <image mode='widthFix' class='navIcon' src='/image/yuYue.png'></image>
+      <text>我的预约</text>
+    </view>
+    <image mode='widthFix' class='path' src='/image/right_icon.png'></image>
+  </view>
+  <view bindtap='down' class='list flex_row'>
+    <view class='flex_row'>
+      <image mode='widthFix' class='navIcon downIcon' src='/image/down.png'></image>
+      <text>APP下载</text>
+    </view>
+    <image mode='widthFix' class='path' src='/image/right_icon.png'></image>
+  </view>
+</view>

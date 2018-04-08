@@ -1,0 +1,25 @@
+/* pages/applySuccess/applySuccess.wxss */
+page{
+  background: #F9F9F9;
+}
+.wrapper{
+  width: 100%;
+  text-align: center;
+  color: #959595;
+  font-size: 11pt;
+  position: fixed;
+  top: 20%;
+  left: 0;
+}
+.wrapper image{
+  width: 38%;
+}
+.wrapper view:last-of-type{
+  background: #4182FF;
+  display: inline-block;
+  color: #F3F4F9;
+  padding: 9px 14px;
+  border-radius: 4px;
+  box-shadow: 0 0 4px #4182FF;
+  margin-top: 20px;
+}

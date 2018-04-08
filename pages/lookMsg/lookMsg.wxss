@@ -1,0 +1,89 @@
+/* pages/lookMsg/lookMsg.wxss */
+/* pages/writeMsg/writeMsg.wxss */
+page{
+  background: #F9F9F9;
+}
+.box{
+  background: #fff;
+}
+
+.headTitle{
+  padding: 14px;
+  border-bottom: 1px solid #E0DFE4;
+  font-weight: bolder;
+  font-size: 16pt;
+}
+.personMsg{
+  padding-left: 20px;
+  color: #717171;
+  font-size: 12pt;
+}
+.msgList{
+  width: 100%; 
+  box-sizing: border-box;
+  padding: 18px 0;
+  padding-right: 10px;
+  justify-content: space-between;
+  border-bottom: 1px solid #EFEFEF;
+}
+.msgList .title{
+  width: 42%;
+}
+.msgList .right_box{
+  width: 58%;
+  font-size: 11pt;
+  word-break: break-all;
+}
+.msgList .select,.selectTxt{
+  color: #353535;
+}
+.select image{
+  width: 12px;
+  max-height: 10px;
+  margin-left: 12px;
+}
+.selectTxt{
+  padding-left: 42%;
+}
+.selectTxt view{
+  padding: 20px 0;
+  font-size: 11pt;
+}
+.nameIcon{
+  width: 22px;
+  height: 22px;
+  margin-right: 18px;
+}
+.pla_style{
+  color: #C9C9C9;
+  font-size: 11pt;
+}
+.next,.submit{
+  color: #F9FAFC;
+  background: #3573FA;
+  border-radius: 0;
+}
+.next::after,.submit::after{
+  border: none;
+}
+
+.detail .msgList{
+  padding-left: 40px;
+}
+.detail .title{
+  width: 20%;
+}
+.detail .msgList .right_box{
+  width: 65%;
+}
+.detail .rightIcon{
+  color: #C9C9C9;
+  font-size: 11pt;
+}
+.detail .rightIcon image{
+  width: 7px;
+  max-height: 16px;
+  margin-left: 10px;
+  position: relative;
+  top: 1px;
+}
